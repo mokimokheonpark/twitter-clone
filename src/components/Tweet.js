@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { dbService } from "fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
+import { dbService, storageService } from "fbase";
 
 const Tweet = ({ tweetObject, isOwner }) => {
-  const tweetTextRef = doc(dbService, "tweets", `${tweetObject.id}`);
   const [editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(tweetObject.text);
+  const textRef = doc(dbService, "tweets", `${tweetObject.id}`);
+  const attachmentRef = ref(storageService, tweetObject.attachmentUrl);
   const toggleEditing = () => setEditing((prev) => !prev);
   const onSubmit = async (event) => {
     event.preventDefault();
-    await updateDoc(tweetTextRef, {
+    await updateDoc(textRef, {
       text: newTweet,
     });
     setEditing(false);
@@ -21,9 +23,14 @@ const Tweet = ({ tweetObject, isOwner }) => {
     setNewTweet(value);
   };
   const onDeleteClick = async () => {
-    const ok = window.confirm("Are you sure you want to delete this tweet?");
-    if (ok) {
-      await deleteDoc(tweetTextRef);
+    const confirmDeleting = window.confirm(
+      "Are you sure you want to delete this tweet?"
+    );
+    if (confirmDeleting) {
+      await deleteDoc(textRef);
+      if (tweetObject.attachmentUrl !== "") {
+        await deleteObject(attachmentRef);
+      }
     }
   };
 
@@ -46,6 +53,14 @@ const Tweet = ({ tweetObject, isOwner }) => {
       ) : (
         <>
           <h4>{tweetObject.text}</h4>
+          {tweetObject.attachmentUrl && (
+            <img
+              src={tweetObject.attachmentUrl}
+              alt=""
+              width="50px"
+              height="50px"
+            />
+          )}
           {isOwner && (
             <>
               <button onClick={toggleEditing}>Edit Tweet</button>
