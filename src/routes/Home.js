@@ -21,9 +21,9 @@ const Home = ({ userObject }) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <TweetFactory userObject={userObject} />
-      <div>
+      <div style={{ marginTop: 30 }}>
         {tweets.map((tweet) => (
           <Tweet
             key={tweet.id}
