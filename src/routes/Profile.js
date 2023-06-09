@@ -32,7 +32,7 @@ const Profile = ({ userObject, refreshUser }) => {
         <input
           onChange={onChange}
           type="text"
-          placeholder="Display Name"
+          placeholder="Edit your name"
           value={newDisplayName}
           autoFocus
           className="formInput"
@@ -47,7 +47,7 @@ const Profile = ({ userObject, refreshUser }) => {
         />
       </form>
       <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
-        Log Out
+        Sign Out
       </span>
     </div>
   );

@@ -64,11 +64,11 @@ const Tweet = ({ tweetObject, isOwner }) => {
           )}
           {isOwner && (
             <div className="tweet__actions">
-              <span onClick={onDeleteClick}>
-                <FontAwesomeIcon icon={faTrash} />
-              </span>
               <span onClick={toggleEditing}>
                 <FontAwesomeIcon icon={faPencilAlt} />
+              </span>
+              <span onClick={onDeleteClick}>
+                <FontAwesomeIcon icon={faTrash} />
               </span>
             </div>
           )}

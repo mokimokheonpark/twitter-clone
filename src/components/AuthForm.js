@@ -63,7 +63,7 @@ const AuthForm = () => {
         />
         <input
           type="submit"
-          value={newAccount ? "Create Account" : "Log In"}
+          value={newAccount ? "Create Account" : "Sign In"}
           className="authInput authSubmit"
         />
         {error && <span className="authError">{error}</span>}

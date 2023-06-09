@@ -11,11 +11,11 @@ input {
 }
 
 body {
-  background-color: black;
+  background-color: beige;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  color: white;
+  font-size: 15px;
+  color: black;
 }
 
 button {
@@ -39,7 +39,7 @@ form {
 
 .container {
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
 }
@@ -107,11 +107,11 @@ form {
   flex-grow: 1;
   height: 40px;
   padding: 0px 20px;
-  color: white;
+  color: black;
   border: 1px solid #04aaff;
   border-radius: 20px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .factoryInput__arrow {
@@ -133,7 +133,7 @@ form {
 
 .factoryInput__label span {
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .factoryForm__attachment {
@@ -156,7 +156,7 @@ form {
 
 .factoryForm__clear span {
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* Tweet */
@@ -168,10 +168,10 @@ form {
 }
 
 .tweet {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: white;
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -181,7 +181,7 @@ form {
 }
 
 .tweet h4 {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .tweet img {
@@ -222,7 +222,7 @@ form {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
 }
 
 .authBtn {
@@ -230,23 +230,22 @@ form {
   border-radius: 20px;
   border: none;
   padding: 10px 0px;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
-  width: 150px;
+  width: 180px;
   background: white;
-  cursor: pointer;
 }
 
 /* AuthForm */
 
 .authInput {
-  max-width: 320px;
+  max-width: 380px;
   width: 100%;
   padding: 10px;
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 1);
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 15px;
   color: black;
 }
 
@@ -262,7 +261,7 @@ form {
   color: tomato;
   text-align: center;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .authSwitch {
@@ -271,6 +270,6 @@ form {
   margin-top: 10px;
   margin-bottom: 50px;
   display: block;
-  font-size: 12px;
+  font-size: 15px;
   text-decoration: underline;
 }
