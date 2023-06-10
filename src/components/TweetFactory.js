@@ -38,12 +38,7 @@ const TweetFactory = ({ userObject }) => {
       creatorId: userObject.uid,
       attachmentUrl,
     };
-    try {
-      const docRef = await addDoc(collection(dbService, "tweets"), tweetObject);
-      console.log("Document written with ID: ", docRef.id);
-    } catch (error) {
-      console.log("Error adding document: ", error);
-    }
+    await addDoc(collection(dbService, "tweets"), tweetObject);
     setTweet("");
     onClearAttachment();
   };
