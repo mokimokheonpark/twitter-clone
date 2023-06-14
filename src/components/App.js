@@ -12,7 +12,12 @@ function App() {
       if (user) {
         setIsLoggedIn(true);
         if (user.displayName === null) {
-          const defaultName = user.email.split("@")[0];
+          let defaultName = "";
+          if (user.email !== null) {
+            defaultName = user.email.split("@")[0];
+          } else {
+            defaultName = "Default Name";
+          }
           user.displayName = defaultName;
         }
         setUserObject({
